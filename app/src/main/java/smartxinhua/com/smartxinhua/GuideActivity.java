@@ -1,6 +1,7 @@
 package smartxinhua.com.smartxinhua;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -8,11 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
+
+import smartxinhua.com.smartxinhua.utils.PrefUtils;
 
 /**
  * 新手引导页
@@ -28,6 +32,7 @@ public class GuideActivity extends Activity {
     private int[] mImageIds = new int[]{R.mipmap.guide_1,R.mipmap.guide_2,R.mipmap.guide_3};
     private ImageView ivRedPoint;//设置小红点
     private int mPointDis;//小红点移动的距离
+    private Button btnStart;
 
 
     @Override
@@ -38,6 +43,8 @@ public class GuideActivity extends Activity {
         mViewPager = (ViewPager) findViewById(R.id.vp_guide);
         llContainer = (LinearLayout) findViewById(R.id.ll_container);
         ivRedPoint = (ImageView)findViewById(R.id.iv_red_point);
+        btnStart = (Button)findViewById(R.id.btn_start);
+
         initData();
         mViewPager.setAdapter(new GuideAdapter());//设置数据
         //设置页面滑动的一个监听
@@ -56,6 +63,12 @@ public class GuideActivity extends Activity {
             @Override
             public void onPageSelected(int position) {
             //某个页面被选中
+                if(position == mImageViewList.size()-1){//最后一个页面显示开始体验的按钮
+                    btnStart.setVisibility(View.VISIBLE);
+
+                }else{
+                    btnStart.setVisibility(View.INVISIBLE);
+                }
             }
 
             @Override
@@ -79,7 +92,16 @@ public class GuideActivity extends Activity {
                 System.out.println("圆点距离:"+mPointDis);
             }
         });
-
+        btnStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //更新sp,已经不是第一次进入了
+                PrefUtils.setBoolean(getApplicationContext(),"is_first_enter",false);
+                //跳转到主页面
+                startActivity(new Intent(getApplicationContext(),MainActivity.class) );
+                finish();
+            }
+        });
     }
 
     //初始化ImageViewer对象.初始化数据
