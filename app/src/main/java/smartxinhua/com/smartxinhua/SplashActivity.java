@@ -1,6 +1,7 @@
 package smartxinhua.com.smartxinhua;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -8,6 +9,8 @@ import android.view.animation.AnimationSet;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.widget.RelativeLayout;
+
+import smartxinhua.com.smartxinhua.utils.PrefUtils;
 
 /**
  * 闪屏页面
@@ -45,5 +48,38 @@ public class SplashActivity extends Activity{
         set.addAnimation(animAlpha);
         //启动动画
         rlroot.startAnimation(set);
+        set.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                //动画结束,跳转页面
+                //如果是第一次进入,进入新手引导页
+                //否则跳转到主页面
+               /* SharedPreferences sp = getSharedPreferences("config",MODE_PRIVATE);
+                Boolean isFirstEnter = sp.getBoolean("is_first_enter",true);*/
+
+                Boolean isFirstEnter = PrefUtils.getBoolean(SplashActivity.this,"is_first_enter",true);
+                Intent intent;
+                if(isFirstEnter){
+                    //跳到新手引导页面
+                intent = new  Intent(getApplicationContext(),GuideActivity.class);
+                }else
+                {
+                    //跳到主页面
+                    intent = new  Intent(getApplicationContext(),MainActivity.class);
+                }
+                startActivity(intent);
+                finish();//结束当前闪屏应用
+            }
+
+        });
     }
 }
