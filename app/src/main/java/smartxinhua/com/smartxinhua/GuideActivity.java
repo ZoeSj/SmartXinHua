@@ -10,6 +10,7 @@ import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 
@@ -46,6 +47,10 @@ public class GuideActivity extends Activity {
             //当页面滑动过程中的回调
                 System.out.println("当前位置:"+position+";移动偏移百分百:"+positionOffset);
                 //更新小红点的距离
+                int leftMargin = (int) (mPointDis * positionOffset + position * mPointDis);//计算小红点当前的左边距
+                RelativeLayout.LayoutParams params =(RelativeLayout.LayoutParams) ivRedPoint.getLayoutParams();//当前的布局参数
+                params.leftMargin = leftMargin;//修改左边距
+                ivRedPoint.setLayoutParams(params);//重新设置布局参数
             }
 
             @Override
