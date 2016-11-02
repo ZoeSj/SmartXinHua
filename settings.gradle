@@ -1,1 +1,3 @@
-include ':app'
+include ':app', ':librarydemo', ':library', ':slidingmenudemo'
+include ':slidingMenuLibrary'
+include ':exampleListActivity'
