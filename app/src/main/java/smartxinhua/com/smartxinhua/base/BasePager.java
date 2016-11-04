@@ -18,7 +18,7 @@ public class BasePager {
     public TextView tvTitle;
     public ImageButton btnMenu;
     public FrameLayout flContent;//这是一个空的帧布局对象,要动态添加布局
-    private final View mRootView;
+    public View mRootView;
 
     public BasePager (Activity activity){
         mActivity = activity;

@@ -24,4 +24,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.0.0-alpha2'
     compile project(':slidingMenuLibrary')
+    compile project(':xUtilsLibrary')
+    compile files('libs/gson-2.3.1.jar')
 }

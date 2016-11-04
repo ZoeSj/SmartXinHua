@@ -8,23 +8,29 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/CircleImgae" />
+            <option value="$PROJECT_DIR$/User" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/exampleListActivity" />
             <option value="$PROJECT_DIR$/library" />
             <option value="$PROJECT_DIR$/librarydemo" />
             <option value="$PROJECT_DIR$/slidingMenuLibrary" />
             <option value="$PROJECT_DIR$/slidingmenudemo" />
+            <option value="$PROJECT_DIR$/xUtilsLibrary" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/CircleImgae" />
+            <option value="$PROJECT_DIR$/User" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/exampleListActivity" />
             <option value="$PROJECT_DIR$/library" />
             <option value="$PROJECT_DIR$/librarydemo" />
             <option value="$PROJECT_DIR$/slidingMenuLibrary" />
             <option value="$PROJECT_DIR$/slidingmenudemo" />
+            <option value="$PROJECT_DIR$/xUtilsLibrary" />
           </set>
         </option>
       </GradleProjectSettings>

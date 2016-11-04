@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CircleImgae/CircleImgae.iml" filepath="$PROJECT_DIR$/CircleImgae/CircleImgae.iml" />
       <module fileurl="file://$PROJECT_DIR$/SmartXinHua.iml" filepath="$PROJECT_DIR$/SmartXinHua.iml" />
+      <module fileurl="file://$PROJECT_DIR$/User/User.iml" filepath="$PROJECT_DIR$/User/User.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/exampleListActivity/exampleListActivity.iml" filepath="$PROJECT_DIR$/exampleListActivity/exampleListActivity.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/librarydemo/librarydemo.iml" filepath="$PROJECT_DIR$/librarydemo/librarydemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/slidingMenuLibrary/slidingMenuLibrary.iml" filepath="$PROJECT_DIR$/slidingMenuLibrary/slidingMenuLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/slidingmenudemo/slidingmenudemo.iml" filepath="$PROJECT_DIR$/slidingmenudemo/slidingmenudemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xUtilsLibrary/xUtilsLibrary.iml" filepath="$PROJECT_DIR$/xUtilsLibrary/xUtilsLibrary.iml" />
     </modules>
   </component>
 </project>

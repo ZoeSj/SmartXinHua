@@ -16,8 +16,14 @@ public class HomePager extends BasePager {
         super(activity);
     }
     public void initData(){
+        //修改页面标题
+        tvTitle.setText("新华BBC");
         //要给帧布局填充布局对象
         View view = View.inflate(mActivity, R.layout.homepager,null);
         flContent.addView(view);//动态的给空白的帧布局添加一个布局对象
+        //隐藏菜单按钮
+        btnMenu.setVisibility(View.GONE);
+
+
     }
 }
